@@ -1,0 +1,55 @@
+create table employees(
+    id bigserial primary key ,
+    name varchar(32),
+    birth_date date,
+    salary numeric,
+    age int,
+    manager_id int
+);
+
+insert into employees values (default,'Rahim',
+'2001-05-21',1000,23,100);
+
+insert into employees values (default,'Orxan',
+'2000-11-20',1500,24,101);
+
+insert into employees values (default,'Elchin',
+'1999-01-01',2000,25,100);
+
+alter table employees rename column manager_id to department_id;
+
+select * from employees where age>23;
+
+select * from employees where name like 'R%';
+
+select * from employees where name ilike 'r%';
+
+select * from employees order by age asc;
+
+select avg(salary) from employees;
+
+select sum(salary) from employees;
+
+select department_id , sum(salary) from employees
+group by department_id;
+
+create table departments(
+    department_id int,
+    department_name varchar(30)
+);
+
+insert into departments values (100,'Adminstration');
+
+insert into departments values (101,'Marketing');
+
+insert into departments values (102,'IT');
+
+select * from departments;
+
+select department_id from departments
+union
+select department_id from employees;
+
+
+
+
