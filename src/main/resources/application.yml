@@ -1,0 +1,29 @@
+#
+#spring.application.name=ms28spring
+#
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+#spring.datasource.username=postgres
+#spring.datasource.password=samsungj6
+#
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.show-sql=true
+#spring.jpa.open-in-view=false
+#
+#spring.liquibase.enabled=false
+
+spring:
+  application:
+    name: ms28spring
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: samsungj6
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false
+  liquibase:
+      enabled: false
+

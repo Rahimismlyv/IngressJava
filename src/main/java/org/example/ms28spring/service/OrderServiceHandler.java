@@ -46,12 +46,12 @@ public class OrderServiceHandler implements OrderService {
     @Override
     public OrderResponse getOrder(Long id) {
         var order = fetchOrderIfExist(id);
-        return new OrderResponse(order.getCreationDate(),order.getTransactionNumber(),order.getAmount());
+        return new OrderResponse(order.getCreationDate(), order.getTransactionNumber(), order.getAmount());
     }
 
     private OrderEntity fetchOrderIfExist(Long id) {
-        return  orderRepository.findByIdAndStatusNot(id,OrderStatus.DELETED)
-                .orElseThrow(()-> new RuntimeException("Order not found"));
+        return orderRepository.findByIdAndStatusNot(id, OrderStatus.DELETED)
+                .orElseThrow(() -> new RuntimeException("Order not found"));
     }
 
 
